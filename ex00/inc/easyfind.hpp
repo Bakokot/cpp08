@@ -1,19 +1,26 @@
 #ifndef EASYFIND_H
 # define EASYFIND_H
 
-# include <iostream>
+# include <exception>
+# include <algorithm>
+
+class	ValueNotFound : public std::exception
+{
+	public:
+		const char	*what() const throw()
+		{
+			return ("Value not found");
+		}
+};
+
 
 template <typename T>
-typename T::iterator	easyfind(T &container, int n)
+int *easyfind(T &container, int n)
 {
-	typename T::iterator	it;
-	typename T::iterator	ite = container.end();
-
-	for (it = container.begin(); it != ite; ++it)
-		std::cout << *it << std::endl;
-	(void)n;
-	std::cout << "test" << *container.end() << std::endl;
-	return (it);
+	typename T::iterator it = std::find(container.begin(), container.end(), n);
+	if (it == container.end())
+		throw ValueNotFound();
+	return (reinterpret_cast<int *>(&(*it)));
 }
 
 #endif // !EASYFIND_H
