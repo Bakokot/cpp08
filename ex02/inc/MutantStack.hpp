@@ -46,10 +46,7 @@ MutantStack<T>	MutantStack<T>::operator=(const MutantStack<T> &rhs)
 {
 	if (this == &rhs)
 		return (*this);
-	for (std::size_t i = 0; i < rhs.size; i++)
-	{
-		this[i] = rhs[i];
-	}
+	this->c = rhs.c;
 	return (*this);
 }
 
@@ -68,13 +65,13 @@ typename MutantStack<T>::iterator	MutantStack<T>::end()
 template<typename T>
 typename MutantStack<T>::const_iterator	MutantStack<T>::cbegin() const
 {
-	return (this->c.begin());
+	return (this->c.cbegin());
 }
 
 template<typename T>
 typename MutantStack<T>::const_iterator	MutantStack<T>::cend() const
 {
-	return (this->c.end());
+	return (this->c.cend());
 }
 
 #endif
