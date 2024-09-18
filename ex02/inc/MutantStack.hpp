@@ -14,6 +14,7 @@ class MutantStack : public std::stack<T>
 
 		MutantStack<T> operator=(const MutantStack<T> &rhs);
 
+		typedef typename ;	
 	private:
 
 };

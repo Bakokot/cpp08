@@ -1,4 +1,4 @@
-NAME			:= 
+NAME			:= mutantStack 
 
 ########################   CLASSES   ########################
 CLASS			:=  
@@ -11,7 +11,7 @@ SRC       		:=	main.cpp
 
 ########################   INCLUDES   ########################
 INC_DIR			:=	inc/
-INC				:=
+INC				:= MutantStack.hpp
 
 ########################   SOURCES + INCS + OBJECTS   ########################
 INC				+=	$(INC_CLASS)
